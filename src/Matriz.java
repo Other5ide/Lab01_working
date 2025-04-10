@@ -14,6 +14,7 @@ public class Matriz {
         imprimirMatriz(matriz);
         llenarMatriz(matriz);
         imprimirMatriz(matriz);
+
     }
 
     public static void menu() {
@@ -63,7 +64,7 @@ public class Matriz {
             System.out.println("Ingrese la dimension m de la matriz: ");
             m_dimension = Integer.parseInt(scanner.nextLine());
         } catch (Exception e) {
-            return;
+            System.out.println("Dimension invalida");
         }
     }
 
@@ -72,7 +73,7 @@ public class Matriz {
             System.out.println("Ingrese la dimension m de la matriz: ");
             n_dimension = Integer.parseInt(scanner.nextLine());
         } catch (Exception e) {
-            return;
+            System.out.println("Dimension invalida");
         }
     }
 
@@ -92,7 +93,10 @@ public class Matriz {
     public static void llenarMatriz(double[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
-                double random = Math.random()*10;
+                double random = Math.round((Math.random()*10));
+                if (random == 10) {
+                    random = 9;
+                }
                 matriz[i][j] = random;
                 }
 
@@ -100,11 +104,17 @@ public class Matriz {
         }
 
     public static void imprimirMatriz(double[][] matriz) {
+        System.out.println("Matriz: ");
         for (double[] doubles : matriz) {
             for (int j = 0; j < matriz[0].length; j++) {
                 System.out.print(doubles[j] + "\t");
             }
             System.out.println();
+        }
+    }
+    public static void mostrarFila(double[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            matriz[i][0] = matriz[i][0];
         }
     }
     }
