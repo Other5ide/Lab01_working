@@ -8,7 +8,11 @@ public class Matriz {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        crearMatriz(2,2);
+        solicitarDimensionM();
+        solicitarDimensionN();
+        crearMatriz(m_dimension, n_dimension);
+        imprimirMatriz(matriz);
+        llenarMatriz(matriz);
         imprimirMatriz(matriz);
     }
 
@@ -54,21 +58,40 @@ public class Matriz {
         }
     }
 
+    public static void solicitarDimensionM() {
+        try {
+            System.out.println("Ingrese la dimension m de la matriz: ");
+            m_dimension = Integer.parseInt(scanner.nextLine());
+        } catch (Exception e) {
+            return;
+        }
+    }
+
+    public static void solicitarDimensionN() {
+        try {
+            System.out.println("Ingrese la dimension m de la matriz: ");
+            n_dimension = Integer.parseInt(scanner.nextLine());
+        } catch (Exception e) {
+            return;
+        }
+    }
+
+
     public static void crearMatriz(int m_dimension, int n_dimension) {
         matriz = new double[m_dimension][m_dimension];
     }
 
     public static boolean validarDimensiones(double[][] matriz) {
-        if (m_dimension == n_dimension) {
+        if (m_dimension > 0 && n_dimension > 0) {
             return true;
         } else {
             return false;
         }
     }
 
-    public void llenarMatriz() {
-        for (int i = 0; i < m_dimension; i++) {
-            for (int j = 0; j < n_dimension; j++) {
+    public static void llenarMatriz(double[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
                 double random = Math.random()*10;
                 matriz[i][j] = random;
                 }
