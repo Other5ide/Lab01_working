@@ -14,6 +14,7 @@ public class Matriz {
         imprimirMatriz(matriz);
         llenarMatriz(matriz);
         imprimirMatriz(matriz);
+        mostrarFila(matriz,3);
 
     }
 
@@ -112,10 +113,12 @@ public class Matriz {
             System.out.println();
         }
     }
-    public static void mostrarFila(double[][] matriz) {
+    public static void mostrarFila(double[][] matriz, int numeroFila) {
+        System.out.println("Fila "+ numeroFila +" : ");
         for (int i = 0; i < matriz.length; i++) {
-            matriz[i][0] = matriz[i][0];
+            System.out.print(matriz[numeroFila][i] + " ");
         }
+        System.out.println();
     }
     }
 
