@@ -14,7 +14,7 @@ public class Matriz {
         imprimirMatriz(matriz);
         llenarMatriz(matriz);
         imprimirMatriz(matriz);
-        mostrarFila(matriz,3);
+        mostrarFila(matriz, 3);
 
     }
 
@@ -48,9 +48,11 @@ public class Matriz {
 
     public static void ejecutarOpcion(int opcion) {
         switch (opcion) {
-            case 1 -> {solicitarDimensionM();
-            solicitarDimensionN();
-            crearMatriz(m_dimension, n_dimension);}
+            case 1 -> {
+                solicitarDimensionM();
+                solicitarDimensionN();
+                crearMatriz(m_dimension, n_dimension);
+            }
             case 2 -> System.out.println("A");
             case 3 -> System.out.println("A");
             case 4 -> System.out.println("A");
@@ -96,15 +98,15 @@ public class Matriz {
     public static void llenarMatriz(double[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
-                double random = Math.round((Math.random()*10));
+                double random = Math.round((Math.random() * 10));
                 if (random == 10) {
                     random = 9;
                 }
                 matriz[i][j] = random;
-                }
-
             }
+
         }
+    }
 
     public static void imprimirMatriz(double[][] matriz) {
         System.out.println("Matriz: ");
@@ -115,14 +117,16 @@ public class Matriz {
             System.out.println();
         }
     }
+
     public static void mostrarFila(double[][] matriz, int numeroFila) {
-        System.out.println("Fila "+ numeroFila +" : ");
+        System.out.println("Fila " + numeroFila + " : ");
         try {
             for (int i = 0; i < matriz.length; i++) {
                 System.out.print(matriz[numeroFila][i] + " ");
             }
         } catch (Exception e) {
-        System.out.println("La matriz no tiene una fila " + numeroFila);}
+            System.out.println("La matriz no tiene una fila " + numeroFila);
+        }
     }
 
     public static void matrizCero(double[][] matriz) {
@@ -130,8 +134,9 @@ public class Matriz {
             for (int j = 0; j < matriz[0].length; j++) {
                 System.out.print(doubles[j] + "\t");
             }
+        }
     }
-    }
+}
 
 
 
