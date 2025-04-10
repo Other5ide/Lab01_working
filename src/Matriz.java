@@ -163,7 +163,10 @@ public class Matriz {
                         }
                 }
                 }
-                if ((contadorCeros/100)*50 >= casillasTotales/100) {
+                if (contadorCeros*100 > casillasTotales*50) {
+                    System.out.println("La matriz es una Matriz tipo Cero");
+                } else {
+                    System.out.println("La matriz no es una Matriz tipo Cero");
                 }
             } else {
             System.out.println("Las dimensiones de la matriz son incorrectas o no se ha creado");
